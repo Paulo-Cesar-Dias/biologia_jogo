@@ -1,474 +1,237 @@
 <?php
 
+    $final = 0;
+    $pq = 0;
+    $pt = 0;
+    $usuario = "";
+    $alt = "";
+    $jaexe = "";
+    $recomeco = "";
 
-    $perguntas=array();
-    $alternativa1="";
-    $alternativa2="";
-    $alternativa3="";
-    $alternativa4="";
-    $alternativa5="";
-    $alternativa6=""; 
+    $class=array("normal","normal","normal","normal");
+    $perguntas[0]["questao"]="1. Qual o verdadeiro nome do lanterna verde?";
+    $perguntas[0][0]=array("Arthur",false);
+    $perguntas[0][1]=array("Henry Pym",false);
+    $perguntas[0][2]=array("Não há um único nome",true);
+    $perguntas[0][3]=array("Jack Oswald",false);
 
-    $pontuacao=0;
+    //2
+    $perguntas[1]["questao"]="2. Qual o nome de nascença do Superman?";
+    $perguntas[1][0]=array("Kal-El",true);
+    $perguntas[1][1]=array("Clark Kent",false);
+    $perguntas[1][2]=array("Jor-El",false);
+    $perguntas[1][3]=array("Virgil Hawkins",false);
 
-  
-    
+    //3
+    $perguntas[2]["questao"]="3. Qual o primeiro vilão enfrentado pela liga da justiça?";
+    $perguntas[2][0]=array("Prometheus, o gênio criminal",false);
+    $perguntas[2][1]=array("Starro, a estrela alienígena gigante",true);
+    $perguntas[2][2]=array("Darkseid",false);
+    $perguntas[2][3]=array("Amazo, android imitador de poderes",false);
 
+    //4
+    $perguntas[3]["questao"]="4. Qual a comida preferida do Batman?";
+    $perguntas[3][0]=array("Bolos",false);
+    $perguntas[3][1]=array("Bife",false);
+    $perguntas[3][2]=array("Nachos",true);
+    $perguntas[3][3]=array("Sorvete",false);
 
-  
+    //5
+    $perguntas[4]["questao"]="5. Sobre a Estelar, qual o seu planeta natal?";
+    $perguntas[4][0]=array("Terra",false);
+    $perguntas[4][1]=array("Azarath",false);
+    $perguntas[4][2]=array("Godthab",false);
+    $perguntas[4][3]=array("Tamaran",true);
 
-    
-    
-    function questao1() {
+    //6
+    $perguntas[5]["questao"]="6. Qual o nome do primeiro intérprete do Homem-Aranha no MCU?";
+    $perguntas[5][0]=array("Nicholas Hammond",false);
+    $perguntas[5][1]=array("Tobey  Maguire",false);
+    $perguntas[5][2]=array("Tom Holland",true);
+    $perguntas[5][3]=array("Andrew Garfield",false);
+
+    //7
+    $perguntas[6]["questao"]="7. Quantas jóias do infinito podem ser anexadas na manopla do Thanos?";
+    $perguntas[6][0]=array("7 jóias",false);
+    $perguntas[6][1]=array("6 jóias",true);
+    $perguntas[6][2]=array("4 jóias",false);
+    $perguntas[6][3]=array("5 jóias",false);
+
+    //8
+    $perguntas[7]["questao"]="8. Qual o verdadeiro nome do Pantera Negra?";
+    $perguntas[7][0]=array("Chadwick Boseman",false);
+    $perguntas[7][1]=array("N’Jadaka",false);
+    $perguntas[7][2]=array("T’Chaka",false);
+    $perguntas[7][3]=array("T'Challa",true);
         
-        
-        $perguntas[0]["questao"]="1. Qual o verdadeiro nome do lanterna verde?";
-        $perguntas[0][0]=array("Arthur",false);
-        $perguntas[0][1]=array("Henry Pym",false);
-        $perguntas[0][2]=array("Não há um único nome",true);
-        $perguntas[0][3]=array("Jack Oswald",false);
+    //9
+    $perguntas[8]["questao"]="9. Qual o primeiro par romântico do homem-aranha nas HQ?";
+    $perguntas[8][0]=array("Gwen Stacy",false);
+    $perguntas[8][1]=array("Liz Allen",true);
+    $perguntas[8][2]=array("Michelle Jones",false);
+    $perguntas[8][3]=array("Mary Jane",false);
 
-        echo"
-        <p id='questao1'></p>
-        <label>"
-        . $perguntas[0]["questao"].
-        "</label><br>        
-        <input type='radio' name='alternativa1' value='0'>
-        <label>"
-        . $perguntas[0][0][0].
-        "</label><br>
-        <input type='radio' name='alternativa1' value='1'>
-        <label>"
-        . $perguntas[0][1][0] .
-        " </label><br>
-        <input type='radio' name='alternativa1' value='2'>
-        <label>"
-        . $perguntas[0][2][0].
-        "</label><br>
-        <input type='radio' name='alternativa1' value='3'>
-        <label>"
-        . $perguntas[0][3][0].
-        "</label><br><br>
-        
-        
-        <a href='#questao2'>Próximo</a>
-        
-       "
-        
-        ;
+    //10
+    $perguntas[9]["questao"]="10. Os nomes dos personagens Capitão América, Hulk e Homem de Ferro são:";
+    $perguntas[9][0]=array("Tony Stark, Steve Rogers e Bruce Wayne",false);
+    $perguntas[9][1]=array("Steve Rogers, Tony Stark e Bruce Banner",false);
+    $perguntas[9][2]=array("Clark Kent, Bruce Banner e Tony Stark",false);
+    $perguntas[9][3]=array("Steve Rogers, Bruce Banner e Tony Stark",true);
+
+    if(isset($_POST['proximo'])){
+        $pq = $_POST['passar'] + 1;
+        $pt = $_POST['pontos'];
+        $usuario= $_POST['usuario'];
     }
 
-    function questao2(){
+    if(isset($_POST['finalizar'])){
 
-        $perguntas[1]["questao"]="2. Qual o nome de nascença do Superman?";
-        $perguntas[1][0]=array("Kal-El",true);
-        $perguntas[1][1]=array("Clark Kent",false);
-        $perguntas[1][2]=array("Jor-El",false);
-        $perguntas[1][3]=array("Virgil Hawkins",false);
-
-        echo "
-        <p id='questao2'></p>
-        <label>"
-        . $perguntas[1]["questao"]."</label><br>
-        <input type='radio' name='alternativa2' value='0'>
-        <label>"
-        . $perguntas[1][0][0]."</label><br>
-        <input type='radio' name='alternativa2' value='1'>
-        <label>"
-        . $perguntas[1][1][0] .
-        " </label><br>
-        <input type='radio' name='alternativa2' value='2'>
-        <label>"
-        . $perguntas[1][2][0].
-        "</label><br>
-        <input type='radio' name='alternativa2' value='3'>
-        <label>"
-        . $perguntas[1][3][0].
-        "</label><br><br>
-        <p id='questao2'></p>
-        
-        <a href='#questao3'>Próximo</a>
-        ";
-
-    } 
-    function questao3(){
-
-        $perguntas[2]["questao"]="3. Qual o primeiro vilão enfrentado pela liga da justiça?";
-        $perguntas[2][0]=array("Prometheus, o gênio criminal",false);
-        $perguntas[2][1]=array("Starro, a estrela alienígena gigante",true);
-        $perguntas[2][2]=array("Darkseid",false);
-        $perguntas[2][3]=array("Amazo, android imitador de poderes",false);
-       
-
-        echo"<label>
-        <p id='questao3'></p>"
-        . $perguntas[2]["questao"]."</label><br>
-        <input type='radio' name='alternativa3' value='0'>
-        <label>"
-        . $perguntas[2][0][0]."</label><br>
-        <input type='radio' name='alternativa3' value='1'>
-        <label>"
-        . $perguntas[2][1][0] .
-        " </label><br>
-        <input type='radio' name='alternativa3' value='2'>
-        <label>"
-        . $perguntas[2][2][0].
-        "</label><br>
-        <input type='radio' name='alternativa3' value='3'>
-        <label>"
-        . $perguntas[2][3][0].
-        "</label><br><br>
-        <a href='#questao4'>Próximo</a>
-        
-        ";
-    }
-        
-    function questao4(){
-
-        $perguntas[3]["questao"]="4. Quais dessas heroínas são fundadoras (principais) da liga da justiça sem limites?";
-        $perguntas[3][0]=array("Mulher maravilha e Canário negro",false);
-        $perguntas[3][1]=array("Canário negro e Caçadora",false);
-        $perguntas[3][2]=array("Mulher gavião e Caçadora",false);
-        $perguntas[3][3]=array("Mulher maravilha e Mulher gavião",true);
-       
-        
-        echo"<label>
-        <p id='questao4'></p>"
-        . $perguntas[3]["questao"]."</label><br>
-        <input type='radio' name='alternativa4' value='0'>
-        <label>"
-        . $perguntas[3][0][0]."</label><br>
-        <input type='radio' name='alternativa4' value='1'>
-        <label>"
-        . $perguntas[3][1][0] .
-        " </label><br>
-        <input type='radio' name='alternativa4' value='2'>
-        <label>"
-        . $perguntas[3][2][0].
-        "</label><br>
-        <input type='radio' name='alternativa4' value='3'>
-        <label>"
-        . $perguntas[3][3][0].
-        "</label><br><br>
-        <a href='#questao5'>Próximo</a>
-        ";
-    
+        $final = $_POST['finalizar'];
+        $pq = $_POST['passar']+1;
+        $pt = $_POST['pontos'];
+        $usuario = $_POST['usuario'];
     }
 
-    function questao5(){
-
-        $perguntas[4]["questao"]="5. Sobre a Estelar, qual o seu planeta natal?";
-        $perguntas[4][0]=array("Mulher maravilha e Canário negro",false);
-        $perguntas[4][1]=array("Canário negro e Caçadora",false);
-        $perguntas[4][2]=array("Mulher gavião e Caçadora",false);
-        $perguntas[4][3]=array("Mulher maravilha e Mulher gavião",true);
-
-        echo"<label><p id='questao5'></p>"
-        . $perguntas[4]["questao"]."</label><br>
-        <input type='radio' name='alternativa5' value='0'>
-        <label>"
-        . $perguntas[4][0][0]."</label><br>
-        <input type='radio' name='alternativa5' value='1'>
-        <label>"
-        . $perguntas[4][1][0] .
-        " </label><br>
-        <input type='radio' name='alternativa5' value='2'>
-        <label>"
-        . $perguntas[4][2][0].
-        "</label><br>
-        <input type='radio' name='alternativa5' value='3'>
-        <label>"
-        . $perguntas[4][3][0].
-        "</label><br><br>
-        <a href='#questao6'>Próximo</a>
-
-        ";
-    } 
-
-    function questao6(){
-
-        $perguntas[5]["questao"]="6. Sobre a Estelar, qual o seu planeta natal?";
-        $perguntas[5][0]=array("Mulher maravilha e Canário negro",false);
-        $perguntas[5][1]=array("Canário negro e Caçadora",false);
-        $perguntas[5][2]=array("Mulher gavião e Caçadora",false);
-        $perguntas[5][3]=array("Mulher maravilha e Mulher gavião",true);
-
-        echo"<label><p id='questao6'></p>"
-        . $perguntas[5]["questao"]."</label><br>
-        <input type='radio' name='alternativa5' value='0'>
-        <label>"
-        . $perguntas[5][0][0]."</label><br>
-        <input type='radio' name='alternativa5' value='1'>
-        <label>"
-        . $perguntas[5][1][0] .
-        " </label><br>
-        <input type='radio' name='alternativa5' value='2'>
-        <label>"
-        . $perguntas[5][2][0].
-        "</label><br>
-        <input type='radio' name='alternativa5' value='3'>
-        <label>"
-        . $perguntas[5][3][0].
-        "</label><br><br>
-        <a href='#questao7'>Próximo</a>
-
-        ";
-    } 
-    function questao7(){
-
-        $perguntas[6]["questao"]="7. O Aquaman é Rei da onde?";
-        $perguntas[6][0]=array("Mares",true);
-        $perguntas[6][1]=array("Terra",false);
-        $perguntas[6][2]=array("Neve",false);
-        $perguntas[6][3]=array("Ares",false);
-
-        echo"<label><p id='questao7'></p>"
-        . $perguntas[6]["questao"]."</label><br>
-        <input type='radio' name='alternativa5' value='0'>
-        <label>"
-        . $perguntas[6][0][0]."</label><br>
-        <input type='radio' name='alternativa5' value='1'>
-        <label>"
-        . $perguntas[6][1][0] .
-        " </label><br>
-        <input type='radio' name='alternativa5' value='2'>
-        <label>"
-        . $perguntas[6][2][0].
-        "</label><br>
-        <input type='radio' name='alternativa5' value='3'>
-        <label>"
-        . $perguntas[6][3][0].
-        "</label><br><br>
-        <a href='#questao8'>Próximo</a>
-
-        ";
-    } 
-
-    function questao8(){
-
-        $perguntas[7]["questao"]="8. Sobre a Estelar, qual o seu planeta natal?";
-        $perguntas[7][0]=array("Mulher maravilha e Canário negro",false);
-        $perguntas[7][1]=array("Canário negro e Caçadora",false);
-        $perguntas[7][2]=array("Mulher gavião e Caçadora",false);
-        $perguntas[7][3]=array("Mulher maravilha e Mulher gavião",true);
-
-        echo"<label><p id='questao8'></p>"
-        . $perguntas[7]["questao"]."</label><br>
-        <input type='radio' name='alternativa5' value='0'>
-        <label>"
-        . $perguntas[7][0][0]."</label><br>
-        <input type='radio' name='alternativa5' value='1'>
-        <label>"
-        . $perguntas[7][1][0] .
-        " </label><br>
-        <input type='radio' name='alternativa5' value='2'>
-        <label>"
-        . $perguntas[7][2][0].
-        "</label><br>
-        <input type='radio' name='alternativa5' value='3'>
-        <label>"
-        . $perguntas[7][3][0].
-        "</label><br><br>
-        <a href='#questao9'>Próximo</a>
-
-        ";
-    } 
-
-    function questao9(){
-
-        $perguntas[8]["questao"]="9. Sobre a Estelar, qual o seu planeta natal?";
-        $perguntas[8][0]=array("Mulher maravilha e Canário negro",false);
-        $perguntas[8][1]=array("Canário negro e Caçadora",false);
-        $perguntas[8][2]=array("Mulher gavião e Caçadora",false);
-        $perguntas[8][3]=array("Mulher maravilha e Mulher gavião",true);
-
-        echo"<label><p id='questao9'></p>"
-        . $perguntas[8]["questao"]."</label><br>
-        <input type='radio' name='alternativa5' value='0'>
-        <label>"
-        . $perguntas[8][0][0]."</label><br>
-        <input type='radio' name='alternativa5' value='1'>
-        <label>"
-        . $perguntas[8][1][0] .
-        " </label><br>
-        <input type='radio' name='alternativa5' value='2'>
-        <label>"
-        . $perguntas[8][2][0].
-        "</label><br>
-        <input type='radio' name='alternativa5' value='3'>
-        <label>"
-        . $perguntas[8][3][0].
-        "</label><br><br>
-        <a href='#questao10'>Próximo</a>
-
-        ";
+    if(isset($_POST['recomeco'])){
+        $pq = $_POST['passar'];
+        $usuario = "";
     }
 
-    function questao10(){
-        $perguntas[9]["questao"]="10. Qual a fraqueza da mulher maravilha?";
-        $perguntas[9][0]=array("Kryptonita",false);
-        $perguntas[9][1]=array("Magia de Ares",true);
-        $perguntas[9][2]=array("Cloreto de etila",false);
-        $perguntas[9][3]=array("Emoções",false);
-        echo"<label> <p id='questao6'></p>"
-        . $perguntas[9]["questao"]."</label><br>
-        <input type='radio' name='alternativa6' value='0'>
-        <label>"
-        . $perguntas[9][0][0]."</label><br>
-        <input type='radio' name='alternativa6' value='1'>
-        <label>"
-        . $perguntas[9][1][0] .
-        " </label><br>
-        <input type='radio' name='alternativa6' value='2'>
-        <label>"
-        . $perguntas[9][2][0].
-        "</label><br>
-        <input type='radio' name='alternativa6' value='3'>
-        <label>"
-        . $perguntas[9][3][0].
-        "</label><br><br>
-        <a href='#questao1'>Recomeçar</a>
-        <input type='submit' value='finalizar' name='calcular'>
-        
-        </form> 
-        ";    
-    }
-  
-    questao1();
-    questao2();
-    questao3();
-    questao4();
-    questao5();
-    questao6(); 
-    questao7(); 
-    questao8(); 
-    questao9(); 
-    questao10();
-    if(isset($_POST["calcular"])){
-        $botao = $_POST["calcular"];
-        if(isset($_POST["alternativa1"])){
-            $alternativa1 = $_POST["alternativa1"];
-            
-        }
-        if(isset($_POST["alternativa2"])){
-            $alternativa2 = $_POST["alternativa2"];
-            
-        }
-        if(isset($_POST["alternativa3"])){
-            $alternativa3 = $_POST["alternativa3"];
-            
-        }
-        if(isset($_POST["alternativa4"])){
-            $alternativa4 = $_POST["alternativa4"];
-            
-        }
-        if(isset($_POST["alternativa5"])){
-            $alternativa5 = $_POST["alternativa5"];
-            
-        }
-        if(isset($_POST["alternativa6"])){
-            $alternativa6 = $_POST["alternativa6"];
-            
-        }
-        
-        # code...
-        if (is_numeric($alternativa1)) {
-            # code...
-            if ($perguntas[0][$alternativa1][1]==true){
-                echo "Acertou";
-                $pontuacao++;
-                echo $pontuacao;
-            }else{
-                echo "Errou";
-            }
-        }
-        if (is_numeric($alternativa2)) {
-            # code...
-            if ($perguntas[1][$alternativa2][1]==true){
-                echo "Acertou";
-                $pontuacao++;
-                echo $pontuacao;
-            }else{
-                echo "Errou";
-            }
-        }
-        if (is_numeric($alternativa3)) {
-            # code...
-            if ($perguntas[2][$alternativa3][1]==true){
-                echo "Acertou";
-                $pontuacao++;
-                echo $pontuacao;
-            }else{
-                echo "Errou";
-            }
-        }
-        if (is_numeric($alternativa4)) {
-            # code...
-            if ($perguntas[3][$alternativa4][1]==true){
-                echo "Acertou";
-                $pontuacao++;
-                echo $pontuacao;
-            }else{
-                echo "Errou";
-            }
-        }
-        if (is_numeric($alternativa5)) {
-            # code...
-            if ($perguntas[4][$alternativa5][1]==true){
-                echo "Acertou";
-                $pontuacao++;
-                echo $pontuacao;
-            }else{
-                echo "Errou";
-            }
-        }
-        if (is_numeric($alternativa6)) {
-            # code...
-            if ($perguntas[5][$alternativa6][1]==true){
-                echo "Acertou";
-                $pontuacao++;
-                echo $pontuacao;
-            }else{
-                echo "Errou";
-            }
-        }
+    if(isset($_POST['alternativa'])){
+        $usuario= $_POST['usuario'];
+        $alt = $_POST['alternativa'];
+        $pt = $_POST['pontos'];
+        $pq = $_POST['passar']-1;
+        $jaexe = "disabled";
 
+        if(is_numeric($alt)){
+
+            if($perguntas[$pq][$alt][1]==true){
+
+                echo "<div class='sucesso'>
+                        Parabéns, você acertou!!
+                    </div>";
+                $pt = $pt+100;
+                $class[$alt]="parabens";  
+
+            }else{
+
+                $alt = $_POST['alternativa'];
+                echo "<div class='errado'>
+                        Errou, quem sabe na próxima vez!!
+                    </div>";
+                $class[$alt]="errou";
+                if ($pt>50) {
+                   
+                    $pt = $pt-50;
+                }
+
+            }    
+        }
+        $pq = $_POST['passar'];
     }
-    
-    
-    ?>
+
+function perguntas($posicao){
+
+    global $perguntas,$pt,$class,$jaexe,$usuario;
+   
+    if($posicao==0){
         
-        
-        <!DOCTYPE html>
-<html lang="pt-BR">
+        echo " 
+        <center>
+            <section class='area-teste'>
+                <div class='teste'>
+                    <div class='questao". $posicao ."'>
+                        <center>
+                            <h1>INSIRA SEU NOME</h1>
+                            <input type='text' 
+                            placeholder = 'Nickname' name ='usuario' autocomplete= 'off'><br><br>
+                            
+                            <input type='submit' name='proximo' value='Começar'> 
+                        </center>
+                    </div>
+                </div>
+            </section>
+        </center>";
+
+    }else{
+
+        $posicao--;
+
+        if($posicao<10){
+            echo "
+            <center>
+                <div class='questao". $posicao+1 ."'><br>";
+
+                    echo "<div class='ponto'>" . 
+                            "Ponto(s): " . $pt . 
+                        "</div>";
+
+                    echo "<br>";
+
+                    echo "<label for=''>" . $perguntas[$posicao]['questao'] . "</label><br><br>
+                    <div class=". $class[0] .">
+                        <input class='chora_nao' type='submit' ". $jaexe ." name='alternativa' value='0'>
+                        <label for=''>" . $perguntas[$posicao][0][0] . "</label><br>
+                    </div>
+                    <div class=". $class[1] .">    
+                        <input class='chora_nao' ". $jaexe ." type='submit' name='alternativa' value='1'>
+                        <label for=''>" . $perguntas[$posicao][1][0] . "</label><br>
+                    </div>
+                    <div class=". $class[2] .">
+                        <input class='chora_nao' ". $jaexe ." type='submit' name='alternativa' value='2'>
+                        <label for=''>" . $perguntas[$posicao][2][0] . "</label><br>
+                    </div>
+                    <div class=". $class[3] .">
+                        <input class='chora_nao' ". $jaexe ." type='submit' name='alternativa' value='3'>
+                        <label for=''>" . $perguntas[$posicao][3][0] . "</label>
+                    </div>
+                    
+                    <br>";
+
+                    if($posicao == 9){
+                        echo "<input type='submit' name='finalizar' value='Finalizar'>";
+                    }else{
+                        echo "<input type='submit' name='proximo' value='Próximo'>";
+                    }
+
+            echo "
+                </div> 
+            </center>";
+        }else{
+            echo "<div class = 'finalizando'>
+                    Sucesso " . $usuario . "! Sua pontuação foi: " . $pt . " de 1000";
+                echo 
+                "</div><br><br>";
+
+                echo "<center><input class='recomeco' type='submit' name='recomeco' value='Recomeçar'>
+                    <input type='text' name='passar' hidden value='0'></center>";
+        }
+    }
+}
+
+?>
+
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Planejamento</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Quiz</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="style1.css">
+    <script src='main.js'></script>
 </head>
-<style>
-    .pa{
-        color: white;
-    }
-    form{
-        margin-bottom: 100%;
-    }
-
-    html {
-        scroll-behavior: smooth;
-        
-    }
-</style>
 <body>
 <div class="container-fluid">
-<?php 
 
-    
-?>
-<!--testando git pull e push-->
+    <form action="arquivo1.php" method="post">
+    <input type="text" name="usuario" hidden value="<?php echo $usuario?>"/>
+        <input type="text" name="passar" hidden value="<?php echo $pq?>"/>
+        <input type="text" name="pontos" hidden value="<?php echo $pt?>"/>
+        <?php perguntas($pq) ?>
+    </form>
+
 </div>
 </body>
 </html>
