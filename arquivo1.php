@@ -9,74 +9,86 @@
     $recomeco = "";
 
     $class=array("normal","normal","normal","normal");
-    $perguntas[0]["questao"]="1. Qual o verdadeiro nome do lanterna verde?";
-    $perguntas[0][0]=array("Arthur",false);
-    $perguntas[0][1]=array("Henry Pym",false);
-    $perguntas[0][2]=array("Não há um único nome",true);
-    $perguntas[0][3]=array("Jack Oswald",false);
+    $perguntas[0]["questao"]="1. Qual o sistema responsável pela formação dos detritos que saem do nosso corpo oriundos dos alimentos sólidos que consumimos? ";
+    $perguntas[0][0]=array("Sistema endócrino",false);
+    $perguntas[0][1]=array("Sistema digestório",true);
+    $perguntas[0][2]=array("Sistema excretor",false);
+    $perguntas[0][3]=array("Sistema cardiovascular",false);
 
     //2
-    $perguntas[1]["questao"]="2. Qual o nome de nascença do Superman?";
-    $perguntas[1][0]=array("Kal-El",true);
-    $perguntas[1][1]=array("Clark Kent",false);
-    $perguntas[1][2]=array("Jor-El",false);
-    $perguntas[1][3]=array("Virgil Hawkins",false);
+    $perguntas[1]["questao"]="2. “Os néfrons são unidades básicas de órgãos como o(s) ________, esses órgãos são
+    componentes diretos do sistema ________.” Complete as lacunas da frase com a
+    alternativa correta.
+    ";
+    $perguntas[1][0]=array("bexiga e respiratório respectivamente",false);
+    $perguntas[1][1]=array("faringe e circulatório respectivamente",false);
+    $perguntas[1][2]=array("rins e urinário respectivamente",true);
+    $perguntas[1][3]=array("estômago e digestório",false);
 
     //3
-    $perguntas[2]["questao"]="3. Qual o primeiro vilão enfrentado pela liga da justiça?";
-    $perguntas[2][0]=array("Prometheus, o gênio criminal",false);
-    $perguntas[2][1]=array("Starro, a estrela alienígena gigante",true);
-    $perguntas[2][2]=array("Darkseid",false);
-    $perguntas[2][3]=array("Amazo, android imitador de poderes",false);
+    $perguntas[2]["questao"]="3. Porque é importante a respiração pelo nariz, ao invés da respiração pela boca.
+    ";
+    $perguntas[2][0]=array("Porque as vias nasais possuem a capacidade de filtragem e umidificação do ar
+    ",true);
+    $perguntas[2][1]=array("Porque respirar pela boca compromete o sistema respiratório
+    ",false);
+    $perguntas[2][2]=array("Porque respirar pelo nariz permite que o O2 chegue mais rápido nas células
+    ",false);
+    $perguntas[2][3]=array("Porque a respiração feita pela boca compromete o paladar graças as impurezas",false);
 
     //4
-    $perguntas[3]["questao"]="4. Qual a comida preferida do Batman?";
-    $perguntas[3][0]=array("Bolos",false);
-    $perguntas[3][1]=array("Bife",false);
-    $perguntas[3][2]=array("Nachos",true);
-    $perguntas[3][3]=array("Sorvete",false);
+    $perguntas[3]["questao"]="4. Qual o sistema responsável por possuir as glândulas de produção das substâncias que o
+    corpo humano precisa para algumas de suas funções.
+    ";
+    $perguntas[3][0]=array("Sistema endócrino",true);
+    $perguntas[3][1]=array("Sistema imunológico",false);
+    $perguntas[3][2]=array("Sistema respiratório",false);
+    $perguntas[3][3]=array("Sistema urinário",false);
 
     //5
-    $perguntas[4]["questao"]="5. Sobre a Estelar, qual o seu planeta natal?";
-    $perguntas[4][0]=array("Terra",false);
-    $perguntas[4][1]=array("Azarath",false);
-    $perguntas[4][2]=array("Godthab",false);
-    $perguntas[4][3]=array("Tamaran",true);
+    $perguntas[4]["questao"]="5. No sistema imunológico, quais as células responsáveis pelo estímulo de outras células a
+    combaterem as células contaminadas?";
+    $perguntas[4][0]=array("Macrófagos",false);
+    $perguntas[4][1]=array("Linfócitos T auxiliadores",true);
+    $perguntas[4][2]=array("Linfócitos T citotóxicos",false);
+    $perguntas[4][3]=array("Linfócitos B",false);
 
     //6
-    $perguntas[5]["questao"]="6. Qual o nome do primeiro intérprete do Homem-Aranha no MCU?";
-    $perguntas[5][0]=array("Nicholas Hammond",false);
-    $perguntas[5][1]=array("Tobey  Maguire",false);
-    $perguntas[5][2]=array("Tom Holland",true);
-    $perguntas[5][3]=array("Andrew Garfield",false);
+    $perguntas[5]["questao"]="6. Qual a função do sistema nervoso central?";
+    $perguntas[5][0]=array("Pensar nas coisas que vão ser feitas no dia-a-dia",false);
+    $perguntas[5][1]=array("Interpretar as informações captadas pelos órgãos sensoriais",true);
+    $perguntas[5][2]=array("Ser composto pela medula espinal e o encéfalo",false);
+    $perguntas[5][3]=array("Receber os estímulos nervosos de diversas partes do corpo",false);
 
     //7
-    $perguntas[6]["questao"]="7. Quantas jóias do infinito podem ser anexadas na manopla do Thanos?";
-    $perguntas[6][0]=array("7 jóias",false);
-    $perguntas[6][1]=array("6 jóias",true);
-    $perguntas[6][2]=array("4 jóias",false);
-    $perguntas[6][3]=array("5 jóias",false);
+    $perguntas[6]["questao"]="7. No sistema digestório, qual o órgão que apresenta atuação dos sucos pancreáticos e
+    entérico";
+    $perguntas[6][0]=array("Intestino delgado",true);
+    $perguntas[6][1]=array("Faringe",false);
+    $perguntas[6][2]=array("Intestino grosso",false);
+    $perguntas[6][3]=array("Estômago",false);
 
     //8
-    $perguntas[7]["questao"]="8. Qual o verdadeiro nome do Pantera Negra?";
-    $perguntas[7][0]=array("Chadwick Boseman",false);
-    $perguntas[7][1]=array("N’Jadaka",false);
-    $perguntas[7][2]=array("T’Chaka",false);
-    $perguntas[7][3]=array("T'Challa",true);
+    $perguntas[7]["questao"]="8. Quais os hormônios produzidos pelo sistema endócrino, são atuantes diretos no controle
+    da glicose no corpo humano.";
+    $perguntas[7][0]=array("Aldosterona, cortisol e epinefrina",false);
+    $perguntas[7][1]=array("Insulina e glucagon",true);
+    $perguntas[7][2]=array("Progesterona e testosterona",false);
+    $perguntas[7][3]=array("Paratormônio e calcitonina",false);
         
     //9
-    $perguntas[8]["questao"]="9. Qual o primeiro par romântico do homem-aranha nas HQ?";
-    $perguntas[8][0]=array("Gwen Stacy",false);
-    $perguntas[8][1]=array("Liz Allen",true);
-    $perguntas[8][2]=array("Michelle Jones",false);
-    $perguntas[8][3]=array("Mary Jane",false);
+    $perguntas[8]["questao"]="9. No Sistema cardiovascular, qual a função do coração e do pulmão respectivamente.";
+    $perguntas[8][0]=array("Oxigenar o sangue e permitir a circulação pelo corpo",false);
+    $perguntas[8][1]=array("Permitir a circulação pelo corpo e oxigenar o sangue",true);
+    $perguntas[8][2]=array("Bombear o sangue pelo corpo e trazer o revestir o coração",false);
+    $perguntas[8][3]=array("Oxigenar o sangue e bater rápido em um momento de desespero e agonia.",false);
 
     //10
-    $perguntas[9]["questao"]="10. Os nomes dos personagens Capitão América, Hulk e Homem de Ferro são:";
-    $perguntas[9][0]=array("Tony Stark, Steve Rogers e Bruce Wayne",false);
-    $perguntas[9][1]=array("Steve Rogers, Tony Stark e Bruce Banner",false);
-    $perguntas[9][2]=array("Clark Kent, Bruce Banner e Tony Stark",false);
-    $perguntas[9][3]=array("Steve Rogers, Bruce Banner e Tony Stark",true);
+    $perguntas[9]["questao"]="No sistema urinário, qual a parte do sistema responsável por conduzir a urina produzida?";
+    $perguntas[9][0]=array("Bexiga",false);
+    $perguntas[9][1]=array("Rins",false);
+    $perguntas[9][2]=array("Néfrons",false);
+    $perguntas[9][3]=array("Ureteres",true);
 
     if(isset($_POST['proximo'])){
         $pq = $_POST['passar'] + 1;
