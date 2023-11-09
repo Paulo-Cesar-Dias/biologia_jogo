@@ -1,5 +1,7 @@
 body{
-    background-image: url(img/px.jpg);
+    background-image: url(img/corpo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 html{
@@ -101,7 +103,7 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(img/dcc.jpg);
+    background-image: url(img/px.jpg);
     border-radius: 115px;
     width: 755px;
     height: 420px;
