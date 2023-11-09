@@ -10,85 +10,111 @@
 
     $class=array("normal","normal","normal","normal");
     $perguntas[0]["questao"]="1. Qual o sistema responsável pela formação dos detritos que saem do nosso corpo oriundos dos alimentos sólidos que consumimos? ";
-    $perguntas[0][0]=array("Sistema endócrino",false);
-    $perguntas[0][1]=array("Sistema digestório",true);
-    $perguntas[0][2]=array("Sistema excretor",false);
-    $perguntas[0][3]=array("Sistema cardiovascular",false);
+    $perguntas[0][0]=array("Sistema endócrino",false,"Você errou, infelizmente, esse não é o sistema correto e sim o digestório!");
+    $perguntas[0][1]=array("Sistema digestório",true,"Parabéns, o sistema digestório realmente é o sistema responsável não por digerir os alimentos e extrair as substâncias necessárias, porém, é através dele que as fezes são formadas e excretadas!");
+    $perguntas[0][2]=array("Sistema excretor",false,"Você errou, infelizmente, esse não é o sistema correto e sim o digestório!");
+    $perguntas[0][3]=array("Sistema cardiovascular",false,"Você errou, infelizmente, esse não é o sistema correto e sim o digestório!");
 
     //2
     $perguntas[1]["questao"]="2. “Os néfrons são unidades básicas de órgãos como o(s) ________, esses órgãos são
     componentes diretos do sistema ________.” Complete as lacunas da frase com a
     alternativa correta.
     ";
-    $perguntas[1][0]=array("bexiga e respiratório respectivamente",false);
-    $perguntas[1][1]=array("faringe e circulatório respectivamente",false);
-    $perguntas[1][2]=array("rins e urinário respectivamente",true);
-    $perguntas[1][3]=array("estômago e digestório",false);
+    $perguntas[1][0]=array("bexiga e respiratório respectivamente",false,"Você errou, infelizmente, infelizmente o órgão correto são os rins que estão localizados no sistema urinário.");
+    $perguntas[1][1]=array("faringe e circulatório respectivamente",false,"Você errou, infelizmente, infelizmente o órgão correto são os rins que estão localizados no sistema urinário.");
+    $perguntas[1][2]=array("rins e urinário respectivamente",true,"Parabéns, os néfrons são as unidades básicas dos rins que estão situados no sistema urinário. São os néfrons inclusive os responsáveis pela produção da urina.");
+    $perguntas[1][3]=array("estômago e digestório",false,"Você errou, infelizmente, infelizmente o órgão correto são os rins que estão localizados no sistema urinário.");
 
     //3
     $perguntas[2]["questao"]="3. Porque é importante a respiração pelo nariz, ao invés da respiração pela boca.
     ";
     $perguntas[2][0]=array("Porque as vias nasais possuem a capacidade de filtragem e umidificação do ar
-    ",true);
+    ",true,"Parabéns, as vias nasais são um dos primeiros locais por onde passa o ar que respiramos, nesse sentido, são essas vias que também possuem os mecanismos de “preparação do ar” para ser utilizado, isso envolve a remoção de impurezas e umedecimento do ar.
+
+    ");
     $perguntas[2][1]=array("Porque respirar pela boca compromete o sistema respiratório
-    ",false);
+    ",false,"Você errou, as vias nasais possuem todo o sistema de filtragem e umidificação do ar.
+    ");
     $perguntas[2][2]=array("Porque respirar pelo nariz permite que o O2 chegue mais rápido nas células
-    ",false);
-    $perguntas[2][3]=array("Porque a respiração feita pela boca compromete o paladar graças as impurezas",false);
+    ",false,"Você errou, as vias nasais possuem todo o sistema de filtragem e umidificação do ar.
+    ");
+    $perguntas[2][3]=array("Porque a respiração feita pela boca compromete o paladar graças as impurezas",false,"Você errou, as vias nasais possuem todo o sistema de filtragem e umidificação do ar.
+    ");
 
     //4
     $perguntas[3]["questao"]="4. Qual o sistema responsável por possuir as glândulas de produção das substâncias que o
     corpo humano precisa para algumas de suas funções.
     ";
-    $perguntas[3][0]=array("Sistema endócrino",true);
-    $perguntas[3][1]=array("Sistema imunológico",false);
-    $perguntas[3][2]=array("Sistema respiratório",false);
-    $perguntas[3][3]=array("Sistema urinário",false);
+    $perguntas[3][0]=array("Sistema endócrino",true,"Parabéns, o sistema endócrino é o sistema responsável pela produção dos hormônios utilizados para o bom funcionamento do nosso corpo. 
+    ");
+    $perguntas[3][1]=array("Sistema imunológico",false,"Você errou, a resposta correta seria o sistema endócrino.");
+    $perguntas[3][2]=array("Sistema respiratório",false,"Você errou, a resposta correta seria o sistema endócrino.");
+    $perguntas[3][3]=array("Sistema urinário",false,"Você errou, a resposta correta seria o sistema endócrino.");
 
     //5
     $perguntas[4]["questao"]="5. No sistema imunológico, quais as células responsáveis pelo estímulo de outras células a
     combaterem as células contaminadas?";
-    $perguntas[4][0]=array("Macrófagos",false);
-    $perguntas[4][1]=array("Linfócitos T auxiliadores",true);
-    $perguntas[4][2]=array("Linfócitos T citotóxicos",false);
-    $perguntas[4][3]=array("Linfócitos B",false);
+    $perguntas[4][0]=array("Macrófagos",false,"Você errou, a opção correta seria os linfócitos T auxiliadores.
+    ");
+    $perguntas[4][1]=array("Linfócitos T auxiliadores",true,"Parabéns, os linfócitos T auxiliadores funcionam como receptores de informações sobre as células contaminadas e estimula imediatamente aos linfócitos B e T citotóxicos a agirem rapidamente.
+    ");
+    $perguntas[4][2]=array("Linfócitos T citotóxicos",false,"Você errou, a opção correta seria os linfócitos T auxiliadores.
+    ");
+    $perguntas[4][3]=array("Linfócitos B",false,"Você errou, a opção correta seria os linfócitos T auxiliadores.
+    ");
 
     //6
     $perguntas[5]["questao"]="6. Qual a função do sistema nervoso central?";
-    $perguntas[5][0]=array("Pensar nas coisas que vão ser feitas no dia-a-dia",false);
-    $perguntas[5][1]=array("Interpretar as informações captadas pelos órgãos sensoriais",true);
-    $perguntas[5][2]=array("Ser composto pela medula espinal e o encéfalo",false);
-    $perguntas[5][3]=array("Receber os estímulos nervosos de diversas partes do corpo",false);
+    $perguntas[5][0]=array("Pensar nas coisas que vão ser feitas no dia-a-dia",false,"Você errou, a opção correta seria os linfócitos T auxiliadores.
+
+    ");
+    $perguntas[5][1]=array("Interpretar as informações captadas pelos órgãos sensoriais",true,"Parabéns, os linfócitos T auxiliadores funcionam como receptores de informações sobre as células contaminadas e estimula imediatamente aos linfócitos B e T citotóxicos a agirem rapidamente.
+    ");
+    $perguntas[5][2]=array("Ser composto pela medula espinal e o encéfalo",false,"Você errou, a opção correta seria os linfócitos T auxiliadores.
+
+    ");
+    $perguntas[5][3]=array("Receber os estímulos nervosos de diversas partes do corpo",false,"Você errou, a opção correta seria os linfócitos T auxiliadores.
+
+    ");
 
     //7
     $perguntas[6]["questao"]="7. No sistema digestório, qual o órgão que apresenta atuação dos sucos pancreáticos e
     entérico";
-    $perguntas[6][0]=array("Intestino delgado",true);
-    $perguntas[6][1]=array("Faringe",false);
-    $perguntas[6][2]=array("Intestino grosso",false);
-    $perguntas[6][3]=array("Estômago",false);
+    $perguntas[6][0]=array("Intestino delgado",true,"Parabéns, é numa parte do intestino delgado chamado duodeno, que ocorre a ingestão do quimo. Nesse processo, o suco entérico rico em enzimas digestivas é produzido e liberado no processo, onde há também a atuação do suco pancreático produzido pelo pâncreas.
+    ");
+    $perguntas[6][1]=array("Faringe",false,"Você errou, é no intestino delgado que podemos ver a atuação desses dois tipos de suco produzidos pelo nosso corpo.");
+    $perguntas[6][2]=array("Intestino grosso",false,"Você errou, é no intestino delgado que podemos ver a atuação desses dois tipos de suco produzidos pelo nosso corpo.");
+    $perguntas[6][3]=array("Estômago",false,"Você errou, é no intestino delgado que podemos ver a atuação desses dois tipos de suco produzidos pelo nosso corpo.");
 
     //8
     $perguntas[7]["questao"]="8. Quais os hormônios produzidos pelo sistema endócrino, são atuantes diretos no controle
     da glicose no corpo humano.";
-    $perguntas[7][0]=array("Aldosterona, cortisol e epinefrina",false);
-    $perguntas[7][1]=array("Insulina e glucagon",true);
-    $perguntas[7][2]=array("Progesterona e testosterona",false);
-    $perguntas[7][3]=array("Paratormônio e calcitonina",false);
+    $perguntas[7][0]=array("Aldosterona, cortisol e epinefrina",false,"Você errou, são a insulina e o glucagon responsáveis por esse processo.
+    ");
+    $perguntas[7][1]=array("Insulina e glucagon",true,"Parabéns, a insulina é responsável pela promoção da entrada de glicose nas células e o glucagon é o responsável pela síntese e liberação da glicose no fígado.
+    ");
+    $perguntas[7][2]=array("Progesterona e testosterona",false,"Você errou, são a insulina e o glucagon responsáveis por esse processo.
+    ");
+    $perguntas[7][3]=array("Paratormônio e calcitonina",false,"Você errou, são a insulina e o glucagon responsáveis por esse processo.
+    ");
         
     //9
     $perguntas[8]["questao"]="9. No Sistema cardiovascular, qual a função do coração e do pulmão respectivamente.";
-    $perguntas[8][0]=array("Oxigenar o sangue e permitir a circulação pelo corpo",false);
-    $perguntas[8][1]=array("Permitir a circulação pelo corpo e oxigenar o sangue",true);
-    $perguntas[8][2]=array("Bombear o sangue pelo corpo e trazer o revestir o coração",false);
-    $perguntas[8][3]=array("Oxigenar o sangue e bater rápido em um momento de desespero e agonia.",false);
+    $perguntas[8][0]=array("Oxigenar o sangue e permitir a circulação pelo corpo",false,"Você errou, na verdade é permitir a circulação pelo corpo e oxigenar o sangue.
+    ");
+    $perguntas[8][1]=array("Permitir a circulação pelo corpo e oxigenar o sangue",true,"Parabéns, o coração é responsável pela troca de sangue oxigenado pelo não oxigenado, de maneira que o seu bombeamento permite que o sangue chegue em todo o corpo. Já o pulmão é responsável por pegar o sangue sem oxigênio e oxigená-lo, de maneira que o gás seja passado para as células.");
+    $perguntas[8][2]=array("Bombear o sangue pelo corpo e trazer o revestir o coração",false,"Você errou, na verdade é permitir a circulação pelo corpo e oxigenar o sangue.
+    ");
+    $perguntas[8][3]=array("Oxigenar o sangue e bater rápido em um momento de desespero e agonia.",false,"Você errou, na verdade é permitir a circulação pelo corpo e oxigenar o sangue.
+    ");
 
     //10
     $perguntas[9]["questao"]="No sistema urinário, qual a parte do sistema responsável por conduzir a urina produzida?";
-    $perguntas[9][0]=array("Bexiga",false);
-    $perguntas[9][1]=array("Rins",false);
-    $perguntas[9][2]=array("Néfrons",false);
-    $perguntas[9][3]=array("Ureteres",true);
+    $perguntas[9][0]=array("Bexiga",false,"Você errou, a parte responsável por isso é constituída pelos ureteres.");
+    $perguntas[9][1]=array("Rins",false,"Você errou, a parte responsável por isso é constituída pelos ureteres.");
+    $perguntas[9][2]=array("Néfrons",false,"Você errou, a parte responsável por isso é constituída pelos ureteres.");
+    $perguntas[9][3]=array("Ureteres",true,"Parabéns, os ureteres têm a função de ser como um canal entre os rins e bexiga para o armazenamento da urina pronta para ser excretada.
+    ");
 
     if(isset($_POST['proximo'])){
         $pq = $_POST['passar'] + 1;
@@ -121,7 +147,7 @@
             if($perguntas[$pq][$alt][1]==true){
 
                 echo "<div class='sucesso'>
-                        Parabéns, você acertou!!
+                       ".$perguntas[$pq][$alt][2]."
                     </div>";
                 $pt = $pt+100;
                 $class[$alt]="parabens";  
@@ -130,7 +156,7 @@
 
                 $alt = $_POST['alternativa'];
                 echo "<div class='errado'>
-                        Errou, quem sabe na próxima vez!!
+                ".$perguntas[$pq][$alt][2]."
                     </div>";
                 $class[$alt]="errou";
                 if ($pt>50) {
